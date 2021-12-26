@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'common/TextStyles.dart';
+import 'common/xd_colors.dart';
+// import 'common/';
+
 class Home extends StatelessWidget {
   Home({
     Key? key,
@@ -9,7 +13,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff000000),
+      backgroundColor: XDColors.BLACK,
       body: Stack(
         children: <Widget>[
           Pinned.fromPins(
@@ -22,7 +26,7 @@ class Home extends StatelessWidget {
                   Pin(start: 0.0, end: 0.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xff000000),
+                      color: XDColors.BLACK,
                     ),
                   ),
                 ),
@@ -39,11 +43,7 @@ class Home extends StatelessWidget {
                   Pin(size: 21.0, end: 0.0),
                   child: Text(
                     'Home',
-                    style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 18,
-                      color: const Color(0xff20b2aa),
-                    ),
+                    style: TextStyles.body(18, XDColors.MINT_GREEN),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -86,11 +86,7 @@ class Home extends StatelessWidget {
                   Pin(size: 21.0, end: 0.0),
                   child: Text(
                     'Note',
-                    style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 18,
-                      color: const Color(0xff20b2aa),
-                    ),
+                    style: TextStyles.body(18, XDColors.MINT_GREEN),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -133,11 +129,7 @@ class Home extends StatelessWidget {
                   Pin(size: 21.0, end: 0.0),
                   child: Text(
                     'Detail',
-                    style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 18,
-                      color: const Color(0xff20b2aa),
-                    ),
+                    style: TextStyles.body(18, XDColors.MINT_GREEN),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -196,7 +188,9 @@ class Home extends StatelessWidget {
                               alignment: WrapAlignment.center,
                               spacing: 20,
                               runSpacing: 0,
-                              children: [
+                              children:
+                              /////////////////
+                              [
                                 {
                                   'text': 'USDJPY',
                                   'text_0': '120.68\n',
@@ -245,6 +239,7 @@ class Home extends StatelessWidget {
                                   'text_1': '34.99',
                                   'text_2': 'QQR／GUI',
                                 }
+                                /////////////////
                               ].map((itemData) {
                                 final text = itemData['text']!;
                                 final text_0 = itemData['text_0']!;
@@ -267,7 +262,7 @@ class Home extends StatelessWidget {
                                         Pin(start: 0.0, end: 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            color: const Color(0xff000000),
+                                            color: XDColors.BLACK,
                                           ),
                                         ),
                                       ),
@@ -276,7 +271,7 @@ class Home extends StatelessWidget {
                                         Pin(start: 0.0, end: 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            color: const Color(0xff000000),
+                                            color: XDColors.BLACK,
                                           ),
                                         ),
                                       ),
@@ -285,11 +280,7 @@ class Home extends StatelessWidget {
                                         Pin(size: 19.0, middle: 0.2564),
                                             child: Text(
                                               text,
-                                              style: TextStyle(
-                                                fontFamily: 'SF Pro',
-                                                fontSize: 18,
-                                                color: const Color(0xffffffff),
-                                              ),
+                                              style: TextStyles.body(18, XDColors.WHITE),
                                               textAlign: TextAlign.left,
                                             ),
                                       ),
@@ -298,11 +289,7 @@ class Home extends StatelessWidget {
                                         Pin(size: 19.0, middle: 0.2564),
                                             child: Text(
                                               text_0,
-                                              style: TextStyle(
-                                                fontFamily: 'SF Pro',
-                                                fontSize: 18,
-                                                color: const Color(0xffffffff),
-                                              ),
+                                              style: TextStyles.body(18, XDColors.WHITE),
                                               textAlign: TextAlign.right,
                                             ),
                                       ),
@@ -311,11 +298,7 @@ class Home extends StatelessWidget {
                                         Pin(size: 19.0, middle: 0.7436),
                                         child: Text(
                                           text_1,
-                                          style: TextStyle(
-                                            fontFamily: 'SF Pro',
-                                            fontSize: 12,
-                                            color: const Color(0xff20b2aa),
-                                          ),
+                                          style: TextStyles.body(18, XDColors.MINT_GREEN),
                                           textAlign: TextAlign.right,
                                         ),
                                       ),
@@ -324,11 +307,7 @@ class Home extends StatelessWidget {
                                         Pin(size: 19.0, middle: 0.7436),
                                         child: Text(
                                           text_2,
-                                          style: TextStyle(
-                                            fontFamily: 'SF Pro',
-                                            fontSize: 12,
-                                            color: const Color(0xffffffff),
-                                          ),
+                                          style: TextStyles.body(12, XDColors.WHITE),
                                           textAlign: TextAlign.left,
                                         ),
                                       ),
@@ -483,11 +462,7 @@ class Home extends StatelessWidget {
                   Pin(size: 21.0, middle: 0.5),
                   child: Text(
                     'RSI(14)',
-                    style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 18,
-                      color: const Color(0xff20b2aa),
-                    ),
+                    style: TextStyles.body(18, XDColors.MINT_GREEN),
                     textAlign: TextAlign.left,
                   ),
                 ),
@@ -506,7 +481,9 @@ class Home extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: const Color(0xffffffff),
                       border: Border.all(
-                          width: 1.0, color: const Color(0xff707070)),
+                          width: 1.0,
+                          color: XDColors.GREY
+                      ),
                     ),
                   ),
                 ),
@@ -520,7 +497,7 @@ class Home extends StatelessWidget {
                         Pin(start: 0.0, end: 0.0),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: const Color(0xff000000),
+                            color: XDColors.BLACK,
                           ),
                         ),
                       ),
@@ -530,7 +507,7 @@ class Home extends StatelessWidget {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0),
-                            color: const Color(0xff20b2aa),
+                            color: XDColors.MINT_GREEN,
                           ),
                         ),
                       ),
@@ -539,11 +516,7 @@ class Home extends StatelessWidget {
                         Pin(size: 21.0, middle: 0.5385),
                         child: Text(
                           '1M',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro',
-                            fontSize: 18,
-                            color: const Color(0xffffffff),
-                          ),
+                          style: TextStyles.body(18, XDColors.WHITE),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -558,7 +531,7 @@ class Home extends StatelessWidget {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
-                                  color: const Color(0xff20b2aa),
+                                  color: XDColors.MINT_GREEN,
                                 ),
                               ),
                             ),
@@ -567,11 +540,7 @@ class Home extends StatelessWidget {
                               Pin(size: 21.0, middle: 0.6),
                               child: Text(
                                 '15M',
-                                style: TextStyle(
-                                  fontFamily: 'SF Pro',
-                                  fontSize: 18,
-                                  color: const Color(0xffffffff),
-                                ),
+                                style: TextStyles.body(18, XDColors.WHITE),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -589,7 +558,7 @@ class Home extends StatelessWidget {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
-                                  color: const Color(0xff20b2aa),
+                                  color: XDColors.MINT_GREEN,
                                 ),
                               ),
                             ),
@@ -598,11 +567,7 @@ class Home extends StatelessWidget {
                               Pin(size: 21.0, middle: 0.6),
                               child: Text(
                                 '5M',
-                                style: TextStyle(
-                                  fontFamily: 'SF Pro',
-                                  fontSize: 18,
-                                  color: const Color(0xffffffff),
-                                ),
+                                style: TextStyles.body(18, XDColors.WHITE),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -629,11 +594,7 @@ class Home extends StatelessWidget {
                               Pin(size: 21.0, middle: 0.6),
                               child: Text(
                                 '1H',
-                                style: TextStyle(
-                                  fontFamily: 'SF Pro',
-                                  fontSize: 18,
-                                  color: const Color(0xffffffff),
-                                ),
+                                style: TextStyles.body(18, XDColors.WHITE),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -660,11 +621,7 @@ class Home extends StatelessWidget {
                               Pin(size: 21.0, middle: 0.6),
                               child: Text(
                                 '4H',
-                                style: TextStyle(
-                                  fontFamily: 'SF Pro',
-                                  fontSize: 18,
-                                  color: const Color(0xffffffff),
-                                ),
+                                style: TextStyles.body(18, XDColors.WHITE),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -679,7 +636,7 @@ class Home extends StatelessWidget {
                   Pin(start: 0.0, end: 33.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xff000000),
+                      color: XDColors.BLACK,
                     ),
                   ),
                 ),
@@ -696,7 +653,7 @@ class Home extends StatelessWidget {
                   Pin(start: 0.0, end: 0.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xff000000),
+                      color: XDColors.BLACK,
                     ),
                   ),
                 ),
@@ -741,8 +698,9 @@ class Home extends StatelessWidget {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.all(
-                                      Radius.elliptical(9999.0, 9999.0)),
-                                  color: const Color(0xff20b2aa),
+                                      Radius.elliptical(9999.0, 9999.0)
+                                  ),
+                                  color: XDColors.MINT_GREEN,
                                 ),
                               ),
                             ),
@@ -760,19 +718,15 @@ class Home extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 0.0, end: 0.0),
                         Pin(start: 0.0, end: 0.0),
-                        child: Scrollbar(
-                          child: SingleChildScrollView(
-                            child: Text(
-                              'AUDGBP',
-                              style: TextStyle(
-                                fontFamily: 'SF Pro',
-                                fontSize: 26,
-                                color: const Color(0xffffffff),
-                                fontWeight: FontWeight.w700,
-                              ),
-                              textAlign: TextAlign.left,
-                            ),
+                        child: Text(
+                          'AUDGBP',
+                          style: TextStyle(
+                            fontFamily: 'SF Pro',
+                            fontSize: 26,
+                            color: XDColors.WHITE,
+                            fontWeight: FontWeight.w700,
                           ),
+                          textAlign: TextAlign.left,
                         ),
                       ),
                     ],
