@@ -11,7 +11,4 @@ class TextStyles {
       )
     );
   }
-  // static const body = TextStyle(
-  // );
-
 }
